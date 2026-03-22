@@ -19,7 +19,7 @@ function setup {
         ## https://developers.redhat.com/products/rhel/ubi
         "centos:stream8"|"centos:stream9") setup_redhat "${@}";;
         "centos:7") setup_redhat_legacy "${@}";;
-        "ubuntu:22.04"|"ubuntu:jammy"|"ubuntu:24.04"|"ubuntu:noble"|"debian:bullseye"|"debian:11"|"debian:bookworm"|"debian:12") setup_debian "${@}";;
+        "ubuntu:22.04"|"ubuntu:jammy"|"ubuntu:24.04"|"ubuntu:noble"|"ubuntu:26.04"|"ubuntu:resolute"|"debian:bullseye"|"debian:11"|"debian:bookworm"|"debian:12"|"debian:trixie"|"debian:13") setup_debian "${@}";;
         *) echo "Unsupported distro: ${DISTRO}"; exit 1
     esac
 }

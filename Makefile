@@ -71,25 +71,35 @@ all_el7: export BUILD_BASE_TAG=centos-7
 all_el7: export PY=3.8
 all_el7: ansible build
 
-all_jammy: export BUILD_BASE=ubuntu:jammy
-all_jammy: export BUILD_BASE_TAG=ubuntu-jammy
-all_jammy: export PY=3.10
-all_jammy: ansible build
+all_resolute: export BUILD_BASE=ubuntu:resolute
+all_resolute: export BUILD_BASE_TAG=ubuntu-resolute
+all_resolute: export PY=3.13
+all_resolute: ansible build
 
 all_noble: export BUILD_BASE=ubuntu:noble
 all_noble: export BUILD_BASE_TAG=ubuntu-noble
 all_noble: export PY=3.12
 all_noble: ansible build
 
-all_bullseye: export BUILD_BASE=debian:bullseye
-all_bullseye: export BUILD_BASE_TAG=debian-bullseye
-all_bullseye: export PY=3.9
-all_bullseye: ansible build
+all_jammy: export BUILD_BASE=ubuntu:jammy
+all_jammy: export BUILD_BASE_TAG=ubuntu-jammy
+all_jammy: export PY=3.10
+all_jammy: ansible build
+
+all_trixie: export BUILD_BASE=debian:trixie
+all_trixie: export BUILD_BASE_TAG=debian-trixie
+all_trixie: export PY=3.13
+all_trixie: ansible build
 
 all_bookworm: export BUILD_BASE=debian:bookworm
 all_bookworm: export BUILD_BASE_TAG=debian-bookworm
 all_bookworm: export PY=3.11
 all_bookworm: ansible build
+
+all_bullseye: export BUILD_BASE=debian:bullseye
+all_bullseye: export BUILD_BASE_TAG=debian-bullseye
+all_bullseye: export PY=3.9
+all_bullseye: ansible build
 
 ansible: ansible_image ansible_pex
 
