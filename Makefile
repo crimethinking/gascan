@@ -56,6 +56,11 @@ all: ansible build
 all_versions:
 	@printf "all_el9\nall_jammy\nall_bullseye"
 
+all_el10: export BUILD_BASE=quay.io/centos/centos:stream10
+all_el10: export BUILD_BASE_TAG=centos-stream10
+all_el10: export PY=3.12
+all_el10: ansible build
+
 all_el9: export BUILD_BASE=quay.io/centos/centos:stream9
 all_el9: export BUILD_BASE_TAG=centos-stream9
 all_el9: export PY=3.9

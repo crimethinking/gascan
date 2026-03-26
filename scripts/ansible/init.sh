@@ -17,7 +17,7 @@ function setup {
     case "${DISTRO}" in
         # TODO: add support for UBI - ubi, ubi-minimal, ubi-init
         ## https://developers.redhat.com/products/rhel/ubi
-        "centos:stream8"|"centos:stream9") setup_redhat "${@}";;
+        "centos:stream8"|"centos:stream9"|"centos:stream10") setup_redhat "${@}";;
         "centos:7") setup_redhat_legacy "${@}";;
         "ubuntu:22.04"|"ubuntu:jammy"|"ubuntu:24.04"|"ubuntu:noble"|"ubuntu:26.04"|"ubuntu:resolute"|"debian:bullseye"|"debian:11"|"debian:bookworm"|"debian:12"|"debian:trixie"|"debian:13") setup_debian "${@}";;
         *) echo "Unsupported distro: ${DISTRO}"; exit 1
@@ -55,7 +55,8 @@ function setup_redhat {
 
     case "${DISTRO}" in
         "centos:stream8") packages+=( python38 python38-wheel python39 python39-wheel );;
-        "centos:stream9") packages+=( python3 python-wheel-wheel ); repos=( "--enablerepo=crb" );
+        "centos:stream9") packages+=( python3 python-wheel-wheel ); repos=( "--enablerepo=crb" );;
+        "centos:stream10") packages+=( python3 python-wheel-wheel ); repos=( "--enablerepo=crb" );
     esac
 
     dnf upgrade -q -y
